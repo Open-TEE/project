@@ -4,7 +4,7 @@ Open TEE project
 This repository contains the overall configuration for the Open TEE project and the associated documentation.
 
 Community
-======
+------
 
 Mailing list:
 * open-tee[AT]googlegroups{DOT}com
@@ -13,30 +13,36 @@ IRC Channel
 * #opentee on irc.freenode.net
 
 Quick setup guide
-======
+------
 
-** Cloning the repositories
+### Cloning the repositories
 
 We decided to use the Android repo tool to conveniently manage the numerous repositories.  What follows is a brief introduction to getting started using this tool, however, full documentation is available at http://source.android.com/source/using-repo.html
 
 Get the repo launcher:
+
 $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
 $ chmod +x ~/bin/repo
 
 Create a directory where you want to checkout the repositories:
+
 $ mkdir open-tee
 
 Install repo in the directory and have it fetch the manifest for the Open-TEE project:
+
 $ cd open-tee
+
 $ ~/bin/repo init -u https://github.com/Open-TEE/manifest.git
 
 Lastly, have repo fetch the repositories defined in the manifest:
+
 $ ~/bin/repo sync
 
 Once cloned, you can work on the repositories in a normal git fashion!
 
 
-** QBS
+### QBS
 
 Initially we have decided to use the qbs build system (http://doc-snapshot.qt-project.org/qbs/) for easy configuration, though we may move to a more mainstream solution such as Autotools when time permits.
 
@@ -79,7 +85,7 @@ Optionally you may select one of the profiles to be the default one e.g. to set 
 $ qbs config defaultProfile gcc
 
 
-** Building the project
+### Building the project
 
 $ cd open-tee/
 
@@ -90,3 +96,7 @@ $ qbs profile:gcc debug
 If a default is set then simply call
 
 $ qbs debug
+
+The result of teh compilation will be found under <profile>-debug e.g.
+
+$ cd gcc-debug
