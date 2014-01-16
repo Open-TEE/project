@@ -1,0 +1,14 @@
+# EditorConfig file for Open-TEE project
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C source files use Linux kernel style
+[*.c]
+intent_style = tab
