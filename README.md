@@ -31,13 +31,30 @@ Create a directory where you want to checkout the repositories:
 Install repo in the directory and have it fetch the manifest for the Open-TEE project:
 
     $ cd open-tee
+    # for normal users who only want to follow and build the code you can do the following
+ 
     $ ~/bin/repo init -u https://github.com/Open-TEE/manifest.git
+
+    # for those wishing to contribute back to the project
+    # signup on http://gerrithub.io/
+    # follow the steps there to get a working copy of Open-Tee (uses github as the backend)
+    # then initialize the project repo
+    
+    $ ~/bin/repo init -u https://github.com/Open-TEE/manifest.git -m developer.xml
+    
+    # then you can add the following to your ~/.ssh/config
+    host review.gerrithub.io
+        port 29418
+        user <github username>
 
 Lastly, have repo fetch the repositories defined in the manifest:
 
     $ ~/bin/repo sync
 
 Once cloned, you can work on the repositories in a normal git fashion!
+
+    #for the developers you can push for gerrit review using the following command
+    $ git push origin HEAD:refs/for/master
 
 
 ### QBS
