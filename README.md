@@ -115,3 +115,7 @@ The result of the compilation will be found under `<profile>-debug` e.g.
 
     $ cd gcc-debug
 
+### Installing the config files
+
+    # Edit opentee.conf to point the library path to your runtime path then
+    $ sudo cp opentee.conf /etc/opentee.conf
