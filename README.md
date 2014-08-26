@@ -82,10 +82,9 @@ or
 
     $ git clone https://git.gitorious.org/qt-labs/qbs.git
 
-Checkout version v1.01
+Build without installing:
     
     $ cd qbs
-    $ git checkout v1.0.1
     $ qmake -r
     $ make -j4
 
