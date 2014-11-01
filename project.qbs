@@ -6,6 +6,7 @@ Project {
  	references: [
 	    "emulator/emulator.qbs",
  	    "libtee/tee.qbs",
-	    "test_clients/test_client.qbs"
+        "tests/tests.qbs",
+        "TAs/TrustedApplications.qbs"
 	]
 }
