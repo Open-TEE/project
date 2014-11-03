@@ -30,6 +30,10 @@ IRC Channel
 Quick setup guide
 ------
 
+### Dependant libraries
+
+apt-get install libelfg0-dev
+
 ### Cloning the repositories
 
 We decided to use the Android repo tool to conveniently manage the numerous repositories.  What follows is a brief introduction to getting started using this tool, however, full documentation is available at http://source.android.com/source/using-repo.html
