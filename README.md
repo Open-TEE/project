@@ -137,3 +137,8 @@ The result of the compilation will be found under `<profile>-debug` e.g.
 
     # Edit opentee.conf to point the library path to your runtime path then
     $ sudo cp opentee.conf /etc/opentee.conf
+
+<a href="https://scan.coverity.com/projects/3441">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/3443/badge.svg"/>
+</a>
