@@ -140,5 +140,5 @@ The result of the compilation will be found under `<profile>-debug` e.g.
 
 <a href="https://scan.coverity.com/projects/3441">
   <img alt="Coverity Scan Build Status"
-       src="https://scan.coverity.com/projects/3443/badge.svg"/>
+       src="https://scan.coverity.com/projects/3441/badge.svg"/>
 </a>
