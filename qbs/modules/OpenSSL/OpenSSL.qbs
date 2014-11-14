@@ -13,6 +13,10 @@ Product {
 
 	// Parse flags returned by pkg-config not having -l in front of them
 	cpp.linkerFlags: {
+                if (!opensslConfig.found) {
+                        throw "OpenSSL not found by pkg-config"
+                }
+
 		var flags = [];
 
 		for (i in opensslConfig.libs) {
@@ -27,6 +31,10 @@ Product {
 
 	// Parse flags returned by pkg-config that have -l in front of them
 	cpp.dynamicLibraries: {
+                if (!opensslConfig.found) {
+                        throw "OpenSSL not found by pkg-config"
+                }
+
 		var flags = [];
 
 		for (i in opensslConfig.libs) {
