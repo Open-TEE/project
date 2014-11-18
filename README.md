@@ -30,9 +30,9 @@ IRC Channel
 Quick setup guide
 ------
 
-### Dependant libraries
+### Dependant libraries and tools
 
-apt-get install libelfg0-dev
+apt-get install uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl
 
 ### Cloning the repositories
 
