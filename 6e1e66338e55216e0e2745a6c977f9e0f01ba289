@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_1ae42f3a",
+        "filename": "setup_conf.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000797
+      },
+      "writtenOn": "2014-11-20T17:58:19Z",
+      "side": 1,
+      "message": "this is not where the compiled TAs reside, this needs to be under the build directory.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 12
+      },
+      "revId": "6e1e66338e55216e0e2745a6c977f9e0f01ba289",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_7ad0db53",
+        "filename": "setup_conf.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000797
+      },
+      "writtenOn": "2014-11-20T17:58:19Z",
+      "side": 1,
+      "message": "the libraries are in the root directory of the build tree",
+      "range": {
+        "startLine": 18,
+        "startChar": 13,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "6e1e66338e55216e0e2745a6c977f9e0f01ba289",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
