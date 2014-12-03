@@ -87,12 +87,16 @@ or
     $ git clone https://git.gitorious.org/qt-labs/qbs.git
 
 Build without installing:
-    
+
     $ cd qbs
     $ qmake -r
     $ make -j4
 
-Do not run make install if you don't have installation prefix defined, otherwise it will just create mess to your root directory. (This is marked as a bug to be resolved for next release of qbs.) !!
+If you wish to run qbs from a location other than the build directory (optional), run:
+
+    $ make install INSTALL_ROOT=$HOME/<PATH TO QBS>
+
+**Note:** Do not run make install if you don't have installation prefix defined, otherwise it will just create mess to your root directory. (This is marked as a bug to be resolved for next release of qbs.) !!
 
 You may want to include `~/qbs/bin` (or similar) to your `PATH` environment variable.
 
@@ -110,6 +114,11 @@ for this one session do:
 Now configure qbs:
 
     $ qbs detect-toolchains
+    $ qbs config --list profiles
+
+For qbs 1.3.2:
+
+    $ qbs qbs setup-toolchains --detect
     $ qbs config --list profiles
 
 Optionally you may select one of the profiles to be the default one e.g. to set the gcc profile as default
