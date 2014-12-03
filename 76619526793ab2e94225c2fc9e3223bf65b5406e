@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_29743ace",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000797
+      },
+      "writtenOn": "2014-12-03T17:45:43Z",
+      "side": 1,
+      "message": "nit - trailing white space",
+      "revId": "76619526793ab2e94225c2fc9e3223bf65b5406e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_4977fed4",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000797
+      },
+      "writtenOn": "2014-12-03T17:45:43Z",
+      "side": 1,
+      "message": "we should add a autogen.sh file so this would be replaced as :\n\ncd build\n\n\n../autogen.sh",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 19
+      },
+      "revId": "76619526793ab2e94225c2fc9e3223bf65b5406e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_e97232e4",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000797
+      },
+      "writtenOn": "2014-12-03T17:45:43Z",
+      "side": 1,
+      "message": "nit - white space alignment",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 7
+      },
+      "revId": "76619526793ab2e94225c2fc9e3223bf65b5406e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
