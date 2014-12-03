@@ -1,0 +1,14 @@
+# Makefile.am -- Process this file with automake to produce Makefile.in
+#
+# NOTE: If you edit this file, make sure changes destined for upstream are 
+# made and committed to the version controlled copy at projects/Makefile.am
+#
+
+# Compiler flags passed to nested packages
+export AM_CFLAGS = -Wall -Wextra -D _GNU_SOURCE
+
+# Linker flags passed to nested packages
+export AM_LDFLAGS = 
+
+# Nested packages to be built
+SUBDIRS = emulator libtee tests
