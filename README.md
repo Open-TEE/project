@@ -78,7 +78,7 @@ Once cloned, you can work on the repositories in a normal git fashion!
 
 ### QBS
 
-Initially we have decided to use the qbs build system (http://doc-snapshot.qt-project.org/qbs/) for easy configuration, though we may move to a more mainstream solution such as Autotools when time permits.
+Initially we have decided to use the qbs build system (http://doc-snapshot.qt-project.org/qbs/) for easy configuration, although we now also support Autotools.
 
     $ git clone git://gitorious.org/qt-labs/qbs.git
 
@@ -125,8 +125,7 @@ Optionally you may select one of the profiles to be the default one e.g. to set 
 
     $ qbs config defaultProfile gcc
 
-
-### Building the project
+#### Building the project
 
     $ cd open-tee/
 
@@ -141,6 +140,34 @@ If a default is set then simply call
 The result of the compilation will be found under `<profile>-debug` e.g.
 
     $ cd gcc-debug
+
+### Autotools
+
+Autotools builds require Autoconf, Automake, and Libtool to be installed:
+
+    $ apt-get install autoconf automake libtool
+
+
+#### Building the project
+
+    $ cd open-tee
+
+We recommend using a parallel build tree (a.k.a. `VPATH` build):
+
+    $ mkdir build
+
+The provided `autogen.sh` script will generate and run the `configure` script. 
+
+    $ cd build
+    $ ../autogen.sh
+
+
+Finally, to actually build OpenTEE simply run:
+
+    $ make
+
+The Open-TEE executables and shared libraries will be found under `emulator/.libs`.
+The `libtee` shared library will be found under `libtee/.libs`.
 
 ### Installing the config files
 
