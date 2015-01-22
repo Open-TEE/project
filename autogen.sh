@@ -6,4 +6,4 @@ pushd "$basedir" > /dev/null
 autoreconf --install --symlink
 popd > /dev/null
 
-"$basedir"/configure --prefix="/usr" $@
+"$basedir"/configure --prefix="/opt/OpenTee" $@
