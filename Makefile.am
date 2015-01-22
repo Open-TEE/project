@@ -5,4 +5,4 @@
 #
 
 # Nested packages to be built
-SUBDIRS = emulator libtee tests
+SUBDIRS = emulator libtee tests CAs TAs

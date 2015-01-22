@@ -16,7 +16,9 @@ AC_CONFIG_MACRO_DIR([m4])
 # Nested packages to be built
 AC_CONFIG_SUBDIRS([emulator
                    libtee
-		   tests])
+		   tests
+		   CAs
+		   TAs])
 
 AC_CONFIG_FILES([Makefile])
 
