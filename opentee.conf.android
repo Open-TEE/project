@@ -1,0 +1,5 @@
+[PATHS]
+ta_dir_path = /system/lib/ta
+core_lib_path = /system/lib/tee
+subprocess_manager = libManagerApi.so
+subprocess_launcher = libLauncherApi.so
