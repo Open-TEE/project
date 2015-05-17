@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# Copyright (c) 2015 Brian McGillion
+#
+#      This program is free software; you can redistribute it and/or modify
+#      it under the terms of the GNU General Public License as published by
+#      the Free Software Foundation, version 2.
+#
+#      This program is distributed in the hope that it will be useful, but
+#      WITHOUT ANY WARRANTY; without even the implied warranty of
+#      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+#      General Public License for more details.
+#
+#      You should have received a copy of the GNU General Public
+#      License along with this program; if not, write to the Free Software
+#      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+#      02110-1301 USA
+#
+# Description: Initialize Open-TEE
+#
+### BEGIN INIT INFO
+# Provides:          opentee-engine
+# Required-Start:    $remote_fs $local_fs
+# Required-Stop:     $remote_fs $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Utility to set up opentee
+# Description:       Open-TEE is a framework for debugging GP compliant\
+#                    TA and CA code.
+### END INIT INFO
+
+DESC="Open-TEE (opentee-engine)"
+CONF="/etc/opentee.conf"
+
+# Check whether opentee config file exists
+if [ ! -f $CONF ]; then
+	echo "No conf file exists"
+	exit 1
+fi
+
+# determine the opentee binary
+PROG=$(awk -F "=" '/opentee_bin/ {print $2}' $CONF)
+if [ ! $PROG ]; then
+	echo "Could not find binary name for opentee"
+	exit 2
+fi
+
+PROG_NAME=`basename $PROG`
+USER_PID="/tmp/opentee/$PROG_NAME.pid"
+ROOT_PID="/var/run/opentee/$PROG_NAME.pid"
+
+start_opentee() {
+	echo "Starting $DESC ..."
+	$PROG
+	echo "done."
+}
+
+stop_opentee() {
+	pid=0
+	if [ -e $USER_PID ]; then
+		pid=`cat $USER_PID`
+	elif [ -e $ROOT_PID ]; then
+		pid=`cat $ROOT_PID`
+	else
+		echo "Can't find the PID file"
+		exit 3
+	fi
+
+	echo "Stopping $DESC (pid = $pid) ..."
+	kill $pid
+	echo "done."
+}
+
+case "$1" in
+   start)
+		start_opentee
+		;;
+   status)
+		echo "TO DO, test if the pid file is locked"
+		;;
+   reload|force-reload|restart|try-restart)
+		echo "Reloading $DESC ..."
+		stop_opentee
+		start_opentee
+		echo "Reload done."
+		;;
+   stop)
+		stop_opentee
+		;;
+   *)
+		echo $"Usage: $0 {start|stop|reload|force-reload|restart|try-restart|status}"
+		exit 4
+		;;
+esac
+
+exit 0
