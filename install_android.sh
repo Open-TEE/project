@@ -6,6 +6,7 @@ adb shell mkdir /system/lib/ta
 adb shell mkdir /system/lib/tee
 
 adb push $OUT/system/lib/libtee.so /system/lib
+adb push $OUT/system/lib/libtee_pkcs11.so /system/lib
 adb push $OUT/system/bin/conn_test_app /system/bin
 adb push $OUT/system/lib/libCommonApi.so /system/lib
 adb push $OUT/system/lib/libInternalApi.so /system/lib
