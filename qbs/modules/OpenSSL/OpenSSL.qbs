@@ -1,7 +1,6 @@
 import qbs.Probes
 
-// A Product Module (to allow Probes)
-Product {
+Module  {
 	id: OpenSSL
 
 	Depends { name: "cpp" }
