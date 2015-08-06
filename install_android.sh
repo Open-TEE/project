@@ -20,3 +20,7 @@ adb push $OUT/system/bin/storage_test /system/bin
 adb push $OUT/system/bin/storage_test_ca /system/bin
 adb push $OUT/system/bin/pkcs11_test /system/bin
 adb push project/opentee.conf.android /etc/opentee.conf
+
+adb shell chmod 755 /system/lib/{ta,tee}
+adb shell chmod 755 /system/bin/{opentee-engine,conn_test_app,pkcs11_test,storage_test,storage_test_ca}
+
