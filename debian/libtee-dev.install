@@ -1,0 +1,4 @@
+usr/include/tee_client_api.h usr/include/open-tee/
+usr/include/tee_shared_data_types.h usr/include/open-tee/
+usr/lib/*/libtee.so
+usr/lib/*/pkgconfig/libtee.pc

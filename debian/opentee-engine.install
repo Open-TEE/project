@@ -1,0 +1,5 @@
+usr/bin/opentee-engine
+usr/lib/*/libCommonApi.so.*
+usr/lib/*/libInternalApi.so.*
+usr/lib/*/libLauncherApi.so.*
+usr/lib/*/libManagerApi.so.*

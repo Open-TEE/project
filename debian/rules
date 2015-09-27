@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+#DEB_CONFIGURE_EXTRA_FLAGS += --prefix="/opt/OpenTee"
+
+%:
+	dh $@ --with autoreconf --parallel
+
+override_dh_strip:
+	dh_strip -plibtee --dbg-package=libtee-dbg
+	dh_strip -popentee-engine --dbg-package=opentee-engine-dbg
+	dh_strip -popentee-ca --dbg-package=opentee-ca-dbg
+	dh_strip -popentee-ta --dbg-package=opentee-ta-dbg
+	dh_strip -plibtee-pkcs11 --dbg-package=libtee-pkcs11-dbg
+
+.PHONY: override_dh_strip

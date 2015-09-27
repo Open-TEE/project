@@ -1,0 +1,5 @@
+open-tee (0.5) unstable; urgency=low
+
+  * Initial package release for debian
+
+ -- Brian McGillion <brian.mcgillion@intel.com>  Sat, 26 Sep 2015 20:00:09 +0900

@@ -1,0 +1,124 @@
+Source: open-tee
+Section: devel
+Priority: optional
+Maintainer: Brian McGillion <brian.mcgillion@intel.com>
+Build-Depends: debhelper (>= 9),
+ pkg-config, autoconf,
+ libtool, dh-autoreconf,
+ doxygen
+Standards-Version: 3.9.3
+Vcs-Git: git@github.com:Open-TEE/project.git
+Vcs-Browser: https://github.com/Open-TEE
+
+Package: libtee
+Section: libs
+Multi-Arch: same
+Architecture: linux-any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Shared libraries for Open-TEE interface.
+ This library allows Client Applications to interact with Open-TEE
+ in compliance with the GlobalPlatform Client API.
+ .
+ Open-TEE provides a GlobalPlatform compliant implementation of the
+ Client and Core Api.
+
+Package: libtee-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ${misc:Depends}, libtee (= ${binary:Version})
+Description: Debug symbols for shared libraries in libtee
+ This library allows Client Applications to interact with Open-TEE
+ in compliance with the GlobalPlatform Client API.
+ .
+ Open-TEE provides a GlobalPlatform compliant implementation of the
+ Client and Core Api.
+
+Package: libtee-dev
+Section: libdevel
+Multi-Arch: same
+Architecture: linux-any
+Depends: ${misc:Depends}, libtee (= ${binary:Version})
+Description: Development headers of shared libraries in libtee
+ This library allows Client Applications to interact with Open-TEE
+ in compliance with the GlobalPlatform Client API.
+ .
+ Open-TEE provides a GlobalPlatform compliant implementation of the
+ Client and Core Api.
+
+Package: opentee-engine
+Section: devel
+Multi-Arch: same
+Architecture: linux-any
+Depends: ${shlibs:Depends}, libtee (= ${binary:Version})
+Description: Main Open-TEE framework
+ The core of the Open-TEE GlobalPlatform compliant vertual TEE.
+ .
+ This is required to run any Client or Trusted Applications
+
+Package: opentee-engine-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ${misc:Depends}, opentee-engine (= ${binary:Version})
+Description: Debug symbols for Open-TEE
+ The core of the Open-TEE GlobalPlatform compliant vertual TEE.
+ .
+ This is required to run any Client or Trusted Applications
+
+Package: opentee-ca
+Section: devel
+Multi-Arch: same
+Architecture: any
+Depends: ${shlibs:Depends}, libtee (= ${binary:Version})
+Description: Example Client Applications using GlobalPlatform API
+ These applications show case the use of the GP Client API
+
+Package: opentee-ca-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ${misc:Depends}, opentee-ca (= ${binary:Version})
+Description: Debug symbols for sample Client Applications
+ These applications show case the use of the GP Client API
+
+Package: opentee-ta
+Section: devel
+Multi-Arch: same
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, opentee-engine (= ${binary:Version})
+Description: Example Client Applications using GlobalPlatform API
+ These applications show case the use of the GP Core API
+
+Package: opentee-ta-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ${misc:Depends}, opentee-ta (= ${binary:Version})
+Description: Debug symbols for sample Trusted Applications
+ These applications show case the use of the GP Core API
+
+Package: libtee-pkcs11
+Section: devel
+Multi-Arch: same
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtee (= ${binary:Version})
+Description: PKCS#11 implementation using GP API
+ This library provides a PKCS#11 API using a GP compliant TEE as the backend.
+
+Package: libtee-pkcs11-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ${misc:Depends}, libtee-pkcs11 (= ${binary:Version})
+Description: Debug symbols for PKCS#11 implementation using GP API
+ This library provides a PKCS#11 API using a GP compliant TEE as the backend.
+
+Package: libtee-pkcs11-dev
+Section: libdevel
+Multi-Arch: same
+Architecture: linux-any
+Depends: ${misc:Depends}, libtee-pkcs11 (= ${binary:Version})
+Description: Development headers of shared libraries in libtee-pkcs11
+ This library allows development of applications that rely on PKCS#11.

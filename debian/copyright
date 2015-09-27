@@ -1,0 +1,16 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Open-TEE
+Upstream-Contact: Brian McGillion <brian.mcgillion@intel.com>
+Source: https://github.com/Open-TEE
+
+Files: *
+Copyright: 2013-2015 Intel Corperation
+	   2013-2015 Brian McGillion <brian.mcgillion@aalto.fi>
+	   2013-2015 Tanel Dettenborn <tanel.dettenborn@cs.helsinki.fi>
+
+License: Apache-2.0
+ You should have received a copy of the Apache-2.0 License
+ along with this package. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the Apache-2.0 License can be
+ found in "/usr/share/common-licenses/Apache-2.0".

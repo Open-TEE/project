@@ -1,0 +1,6 @@
+usr/include/cryptoki.h
+usr/include/pkcs11f.h
+usr/include/pkcs11.h
+usr/include/pkcs11t.h
+usr/lib/*/libtee_pkcs11.so
+usr/lib/*/pkgconfig/libtee_pkcs11.pc
