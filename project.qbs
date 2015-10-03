@@ -9,6 +9,7 @@ Project {
             "tests/tests.qbs",
             "CAs/ClientApplications.qbs",
             "TAs/TrustedApplications.qbs",
-	    "libtee_pkcs11/libtee_pkcs11.qbs"
+	    "libtee_pkcs11/libtee_pkcs11.qbs",
+	    "libomnishare/libomnishare.qbs"
 	]
 }
