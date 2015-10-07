@@ -1,14 +1,23 @@
 import qbs
+import qbs.File
+
 
 Project {
-	qbsSearchPaths: ['project/qbs']
+    qbsSearchPaths: ['project/qbs']
 
- 	references: [
-	    "emulator/emulator.qbs",
- 	    "libtee/libtee.qbs",
-            "tests/tests.qbs",
-            "CAs/ClientApplications.qbs",
-            "TAs/TrustedApplications.qbs",
-	    "libtee_pkcs11/libtee_pkcs11.qbs"
-	]
+    references: {
+        var binaries = [
+                    "emulator/emulator.qbs",
+                    "libtee/libtee.qbs",
+                    "tests/tests.qbs",
+                    "CAs/ClientApplications.qbs",
+                    "TAs/TrustedApplications.qbs",
+                    "libtee_pkcs11/libtee_pkcs11.qbs"
+                ]
+
+        if (File.exists(sourceDirectory + "/libomnishare/libomnishare.qbs")) {
+            binaries.push("libomnishare/libomnishare.qbs")
+        }
+        return binaries
+    }
 }
