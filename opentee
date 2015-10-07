@@ -39,7 +39,7 @@ if [ ! -f $CONF ]; then
 fi
 
 # determine the opentee binary
-PROG=$(awk -F "=" '/opentee_bin/ {print $2}' $CONF)
+PROG=$(awk -F "=" '$1!~/^#/ && /opentee_bin/ {print $2}' $CONF)
 if [ ! $PROG ]; then
 	echo "Could not find binary name for opentee"
 	exit 2
