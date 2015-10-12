@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_82f39b09",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2015-10-12T10:53:15Z",
+      "side": 0,
+      "message": "this link is actually still perfectly valid, no need to make the user bounce to the documentation site to just click on a link",
+      "range": {
+        "startLine": 51,
+        "startChar": 34,
+        "endLine": 51,
+        "endChar": 35
+      },
+      "revId": "b891d9667567df7ce96c5a82f9f1a11f43cb7429",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
