@@ -44,11 +44,11 @@ This guide describes how to obtain and build Open-TEE from source on Ubuntu 14.0
 
 If you simply wish to build Open-TEE using the suggested configuration, you can also follow the tutorial at:
 
-http://open-tee.github.io/tutorial/
+http://open-tee.github.io/documentation/
 
 If you wish to build Open-TEE for Android, consult the Android specific build documentation at:
 
-https://open-tee.github.io/android/
+http://open-tee.github.io/android
 
 ### Prerequisites
 
