@@ -1,6 +1,7 @@
 import qbs.Probes
+import opentee.probehelper
 
-Module  {
+Module {
 	id: OpenSSL
 
 	Depends { name: "cpp" }
@@ -16,16 +17,7 @@ Module  {
                         throw "OpenSSL not found by pkg-config"
                 }
 
-		var flags = [];
-
-		for (i in opensslConfig.libs) {
-			splitflag = opensslConfig.libs[i].split('-l');
-			if (splitflag.length != 2) {
-				flags.push(flag);
-			}
-		}
-
-		return flags;
+		return probehelper.getLinkerFlags(opensslConfig.libs);
 	}
 
 	// Parse flags returned by pkg-config that have -l in front of them
@@ -34,17 +26,8 @@ Module  {
                         throw "OpenSSL not found by pkg-config"
                 }
 
-		var flags = [];
-
-		for (i in opensslConfig.libs) {
-			splitflag = opensslConfig.libs[i].split('-l');
-			if (splitflag.length == 2 && splitflag[0] == "") {
-				flags.push(splitflag[1]);
-			}
-		}
-
-		return flags;
+		return probehelper.getLibraries(opensslConfig.libs);
 	}
 
-	cpp.cxxFlags: opensslConfig.cflags
+	cpp.cFlags: opensslConfig.cflags
 }
