@@ -74,12 +74,16 @@ Fetch the `repo` repository management tool:
 
 #### Installing QBS
 
-Open-TEE requires `qbs` 1.4.2 or above. Up-to-date packages of `qbs` for Ubuntu 14.04 are available from the [qutIM PPA](https://launchpad.net/~qutim/+archive/ubuntu/qutim).
+Open-TEE requires `qbs` 1.4.2 or above. For **Ubuntu 14.04** up-to-date packages of `qbs` are available from the [qutIM PPA](https://launchpad.net/~qutim/+archive/ubuntu/qutim).
 
 Issue the following commands to add the PPA and install `qbs`:
 
     $ sudo add-apt-repository ppa:qutim/qutim
     $ sudo apt-get update
+    $ sudo apt-get install qbs
+
+For **Ubuntu 15.04** and above `qbs` is available in universal repositories. Simply run:
+
     $ sudo apt-get install qbs
 
 #### Installing Autotools
