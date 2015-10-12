@@ -57,7 +57,7 @@ Full documentation for `repo` is available at https://source.android.com/source/
 
 You'll also need to install `git`, `curl`, `pkg-config` and the necessary build dependencies:
 
-    $ sudo apt-get install git curl pkg-config build-essential uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev
+    $ sudo apt-get install git curl pkg-config build-essential uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev libfuse-dev
 
 Introduce yourself to `git` if you haven't done so already:
 
