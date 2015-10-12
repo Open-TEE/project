@@ -17,6 +17,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SUBDIRS([emulator
                    libtee
                    libtee_pkcs11
+		   libomnishare
 		   tests
 		   CAs
 		   TAs])

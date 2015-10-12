@@ -5,4 +5,4 @@
 #
 
 # Nested packages to be built
-SUBDIRS = emulator libtee libtee_pkcs11 tests CAs TAs
+SUBDIRS = emulator libtee libtee_pkcs11 libomnishare tests CAs TAs
