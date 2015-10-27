@@ -97,7 +97,7 @@ The Autotools build has been tested with [Autoconfig](https://www.gnu.org/softwa
 Create a directory where the repositories are to be cloned:
 
     $ mkdir Open-TEE
-    $ cs Open-TEE
+    $ cd Open-TEE
 
 Have `repo` fetch the manifest for the Open-TEE project:
 
