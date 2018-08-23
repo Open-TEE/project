@@ -33,7 +33,7 @@ Our primary motivation for the virtual TEE is to use it as a tool for developers
 
 We intend that Trusted Applications developed using our virtual TEE can be compiled and run for any target that complies with the specifications.
 
-The Open-TEE project is being led by the <a href="http://se-sy.org">Secure Systems group</a> as part of our activities at the <a href="http://www.icri-sc.org/"> Intel Collaborative Research Institute for Secure Computing </a>
+The Open-TEE project is being led by the <a href="https://ssg.aalto.fi">Secure Systems group</a> as part of our activities at the <a href="http://www.icri-sc.org/"> Intel Collaborative Research Institute for Secure Computing </a>
 
 All activities of the project are public and all results are in the public domain. We welcome anyone interested to join us in contributing to the project.
 
