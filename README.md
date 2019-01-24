@@ -55,9 +55,19 @@ http://open-tee.github.io/android
 Open-TEE uses the Android `repo` tool to manage the Git repositories that contain the source code. What follows are step-by-step instructions for setting up the build environment for Open-TEE.
 Full documentation for `repo` is available at https://source.android.com/source/using-repo.html
 
-You'll also need to install `git`, `curl`, `pkg-config` and the necessary build dependencies:
+You'll also need to install `git`, `curl`, `python`, `pkg-config` and the necessary build dependencies:
 
-    $ sudo apt-get install git curl pkg-config build-essential uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev libfuse-dev
+For Ubuntu 15.04:
+
+    $ sudo apt-get install git curl python pkg-config build-essential uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev libfuse-dev
+
+For Ubuntu 16.04:
+
+    $ sudo apt-get install git curl python pkg-config build-essential uuid-dev libssl-dev libglu1-mesa-dev libelf-dev mesa-common-dev libfuse-dev
+
+For Ubuntu 18.04:
+
+    $ sudo apt-get install git curl python pkg-config build-essential uuid-dev libssl1.0-dev libglu1-mesa-dev libelf-dev mesa-common-dev libfuse-dev
 
 Introduce yourself to `git` if you haven't done so already:
 
