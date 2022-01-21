@@ -40,7 +40,7 @@ All activities of the project are public and all results are in the public domai
 Setup
 ------
 
-This guide describes how to obtain and build Open-TEE from source on Ubuntu 14.04 LTS (Trusty Tahr). We currently support building Open-TEE using either the [QBS](https://wiki.qt.io/Qt_Build_Suite) build tool or [Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html).
+This guide describes how to obtain and build Open-TEE from source on Ubuntu 14.04 LTS (Trusty Tahr). We currently support building Open-TEE using [Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html).
 
 If you simply wish to build Open-TEE using the suggested configuration, you can also follow the tutorial at:
 
@@ -72,19 +72,6 @@ Fetch the `repo` repository management tool:
     $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     $ chmod +x ~/bin/repo
 
-#### Installing QBS
-
-Open-TEE requires `qbs` 1.4.2 or above. For **Ubuntu 14.04** up-to-date packages of `qbs` are available from the [qutIM PPA](https://launchpad.net/~qutim/+archive/ubuntu/qutim).
-
-Issue the following commands to add the PPA and install `qbs`:
-
-    $ sudo add-apt-repository ppa:qutim/qutim
-    $ sudo apt-get update
-    $ sudo apt-get install qbs
-
-For **Ubuntu 15.04** and above `qbs` is available in universal repositories. Simply run:
-
-    $ sudo apt-get install qbs
 
 #### Installing Autotools
 
@@ -123,22 +110,6 @@ Once cloned, you can work on the repositories in a normal git fashion. Developer
 
     $ git push origin HEAD:refs/for/master
 
-### Building using QBS
-
-Configure `qbs` for your toolchain:
-
-    $ qbs detect-toolchains
-    $ qbs config --list profiles
-
-Optionally you may select one of the profiles to be the default one e.g. to set the `gcc` profile as default
-
-    $ qbs config defaultProfile gcc
-
-Finally, build Open-TEE:
-
-    $ qbs debug
-
-The result of the compilation will be found under `<profile>-debug`, e.g. executables and libraries under `gcc-debug` and trusted application objects under `gcc-debug/TAs`. 
 
 ### Building using Autotools
 
@@ -182,24 +153,14 @@ Add the sample configuration given below to the configuration file:
 > subprocess\_launcher = libLauncherApi.<span></span>so  
 >
 
-For a `qbs` build you can use:
-
->  
-> [PATHS]  
-> ta\_dir\_path = _PATHNAME_/Open-TEE/gcc-debug/TAs  
-> core\_lib\_path = _PATHNAME_/Open-TEE/gcc-debug  
-> subprocess\_manager = libManagerApi.<span></span>so  
-> subprocess\_launcher = libLauncherApi.<span></span>so  
->  
-
 where _PATHNAME_ is replaced with the absolute path to the parent directory of the Open-TEE directory you created earlier. The pathname must **not** include special variables such as `~` or `$HOME`.
 
 For an autotools build you can use
 
 >  
 > [PATHS]  
-> ta\_dir\_path = /opt/Open-TEE/lib/TAs  
-> core\_lib\_path = /opt/Open-TEE/lib  
+> ta\_dir\_path = /opt/OpenTee/lib/TAs  
+> core\_lib\_path = /opt/OpenTee/lib  
 > subprocess\_manager = libManagerApi.<span></span>so  
 > subprocess\_launcher = libLauncherApi.<span></span>so  
 >  
@@ -207,11 +168,6 @@ For an autotools build you can use
 ### Running and Debugging
 
 You are now ready to launch the `opentee-engine`.
-
-For a `qbs` build:
-
-    $ cd gcc-debug
-    $ ./opentee-engine
 
 For an autotools build:
 
@@ -237,17 +193,12 @@ The `set follow-fork-mode child` command passed to `gdb` on the command line cau
 
 In second terminal run the client application:
 
-    $ cd Open-TEE/gcc-debug
-    $ ./conn_test_app
-
-or 
-
     $ /opt/Open-TEE/bin/conn_test_app
 
 You should now expect to see output similar to the following:
 
 >
-> gcc-debug$ ./conn_test_app  
+> ./conn_test_app  
 > START: conn test app  
 > Initializing context: 
 >
@@ -327,12 +278,6 @@ Run the following command and invoke `gdb` again:
 
 Contact
 ------
-
-Mailing list:
-* open-tee[AT]googlegroups{DOT}com
-
-IRC channel:
-* #opentee on irc.freenode.net
 
 Bug reports and other issues:
 * https://github.com/Open-TEE/project/issues
