@@ -37,6 +37,43 @@ The Open-TEE project is being led by the <a href="https://ssg.aalto.fi">Secure S
 
 All activities of the project are public and all results are in the public domain. We welcome anyone interested to join us in contributing to the project.
 
+Quickstart guide
+------
+A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into any errors or need more information, see topics below or raise an issue.
+
+      # prerequisite packages
+      $ sudo apt-get install -y build-essential git pkg-config uuid-dev libelf-dev wget curl autoconf automake libtool libfuse-dev
+
+      # Google repo (skip if you already have it)
+      $ mkdir -p ~/bin
+      $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+      $ chmod +x ~/bin/repo
+     
+      # mbedtls 3.1.0: fetch, compile and install
+      # (Note: Tested with 3.1.0, but 3.x.x version should be sufficient)
+      # (Note: Currently Apt package contains 2.x.x version)
+      # (NOTE: If you already have installed mbedtls, update with your own risk and cautions!!)
+      $ wget https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.1.0.tar.gz
+      $ tar -xf v3.1.0.tar.gz && cd mbedtls-3.1.0
+      $ make -j4 && make install
+      
+      # Clone opentee
+      $ mkdir opentee && cd opentee
+      $ ~/bin/repo init -u https://github.com/Open-TEE/manifest.git
+      $ ~/bin/repo sync -j10
+      
+      # Build opentee and install (cd into opentee source folder)
+      $ mkdir build && cd build
+      $ ../autogen.sh
+      $ make -j4 && make install
+      
+      # Generate opentee conf
+      $ sudo echo -e "[PATHS]\nta_dir_path = /opt/OpenTee/lib/TAs\ncore_lib_path = /opt/OpenTee/lib\nsubprocess_manager = libManagerApi.so\nsubprocess_launcher = libLauncherApi.so" > /home/dettenbo/home_tmp/opentee.conf
+      
+      # Run opentee and connection test program
+      # /opt/OpenTee/bin/opentee
+      # /opt/OpenTee/bin/conn_test
+
 Setup
 ------
 
