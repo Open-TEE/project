@@ -64,9 +64,10 @@ A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into an
       $ ~/bin/repo sync -j10
       
       # Build opentee and install (cd into opentee source folder)
+      # Note: Install location is "/opt/OpenTee"
       $ mkdir build && cd build
       $ ../autogen.sh
-      $ make -j && make install
+      $ make -j && sudo make install
       
       # Generate opentee conf
       $ sudo echo -e "[PATHS]\nta_dir_path = /opt/OpenTee/lib/TAs\ncore_lib_path = /opt/OpenTee/lib\nsubprocess_manager = libManagerApi.so\nsubprocess_launcher = libLauncherApi.so" > /etc/opentee.conf
