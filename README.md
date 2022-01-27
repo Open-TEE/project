@@ -55,7 +55,8 @@ A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into an
       # (NOTE: If you already have installed mbedtls, update with your own risk and cautions!!)
       $ wget https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.1.0.tar.gz
       $ tar -xf v3.1.0.tar.gz && cd mbedtls-3.1.0
-      $ make -j4 && make install
+      $ cmake -DUSE_SHARED_MBEDTLS_LIBRARY=On .
+      $ make -j && make install
       
       # Clone opentee
       $ mkdir opentee && cd opentee
@@ -65,10 +66,10 @@ A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into an
       # Build opentee and install (cd into opentee source folder)
       $ mkdir build && cd build
       $ ../autogen.sh
-      $ make -j4 && make install
+      $ make -j && make install
       
       # Generate opentee conf
-      $ sudo echo -e "[PATHS]\nta_dir_path = /opt/OpenTee/lib/TAs\ncore_lib_path = /opt/OpenTee/lib\nsubprocess_manager = libManagerApi.so\nsubprocess_launcher = libLauncherApi.so" > /home/dettenbo/home_tmp/opentee.conf
+      $ sudo echo -e "[PATHS]\nta_dir_path = /opt/OpenTee/lib/TAs\ncore_lib_path = /opt/OpenTee/lib\nsubprocess_manager = libManagerApi.so\nsubprocess_launcher = libLauncherApi.so" > /etc/opentee.conf
       
       # Run opentee and connection test program
       # /opt/OpenTee/bin/opentee
