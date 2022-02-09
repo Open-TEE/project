@@ -1,0 +1,50 @@
+FROM ubuntu:20.04
+
+# Setup flow:
+# 1) Ubuntu and packages
+# 2) Google repo tool
+# 3) Prepare syslog
+# 4) OpenTEE config for running inside docker
+# 5) Docker container user
+RUN apt-get update && apt-get -y upgrade && \
+    \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+      build-essential \
+      git \
+      pkg-config \
+      uuid-dev \
+      libelf-dev \
+      wget \
+      curl \
+      autoconf \
+      automake \
+      libtool \
+      libfuse-dev \
+      python3.6 \
+      python-is-python3 \
+      cmake \
+      sudo \
+      \
+      && \
+    \
+    echo "[PATHS]\nta_dir_path = /opt/OpenTee/lib/TAs\ncore_lib_path = /opt/OpenTee/lib\nsubprocess_manager = libManagerApi.so\nsubprocess_launcher = libLauncherApi.so" > /etc/opentee.conf && \
+    \
+    groupadd -g 1000 docker && useradd -r -g 1000 -u 1000 --shell /bin/bash --create-home --home /home/docker docker && \
+    echo "docker ALL= NOPASSWD: /usr/bin/make" >> /etc/sudoers.d/docker && \
+    \
+    rm -rf /var/lib/apt/lists/*
+
+
+# Mbedtls 3.1.0
+WORKDIR "/tmp/mbedtls"
+RUN wget https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.1.0.tar.gz && \
+    tar xf v3.1.0.tar.gz && \
+    cmake -DUSE_SHARED_MBEDTLS_LIBRARY=On /tmp/mbedtls/mbedtls-3.1.0 && \
+    make -j && make install && \
+    rm -rf /tmp/mbedtls && ldconfig
+
+
+WORKDIR /home/docker/opentee
+USER docker
+
+ENTRYPOINT [ "/bin/bash" ]
