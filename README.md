@@ -13,7 +13,6 @@ This repository contains the overall configuration for the Open-TEE project and 
 - [Setup](#setup-guide)
     - [Prerequisites](#prerequisites)
     - [Obtaining the Source](#obtaining-the-source)
-    - [Building using QBS](#building-using-qbs)
     - [Building using Autotools](#building-using-autotools)
     - [Configuration](#configuration)
     - [Running and Debugging](#running-and-debugging)
@@ -40,6 +39,8 @@ All activities of the project are public and all results are in the public domai
 Quickstart guide
 ------
 A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into any errors or need more information, see topics below or raise an issue.
+
+NOTE: [We have also a docker envronment](#docker)!
 
       # prerequisite packages
       $ sudo apt-get install -y build-essential git pkg-config uuid-dev libelf-dev wget curl autoconf automake libtool libfuse-dev
@@ -75,6 +76,40 @@ A minimalistic guide is tested on Ubuntu 20.04 (Focal Fossa). If you run into an
       # Run opentee and connection test program
       # /opt/OpenTee/bin/opentee
       # /opt/OpenTee/bin/conn_test
+
+Docker
+------
+Docker environment tested on Ubuntu 20.04 (Focal Fossa) and Community docker engine 20.10.12. If you run on other platforms then you might need to adjust docker volumes. Please see tips for streamlining your development/usage
+
+#### Basic usage
+
+     # Prerequisite: Clone opentee source code
+     # Please see quickstart guide points
+     # 1. Google repo (skip if you already have it)
+     # 2. Clone opentee
+     
+     # Run Docker
+     $ cd docker
+     $ ./build-docker.sh
+     $ ./run-docker.sh
+     
+     # Inside docker: Compile and run opentee
+     # Please see quickrstart guide points
+     # 1. Build opentee and install
+     # 2. Run opentee and connection test program
+
+#### Docker environment tips
+
+    a) OpenTEE prints its debug prints to syslog and therefore /dev/log 
+       is mounted. You can read logs from your host machine
+    b) You can pass "--prefix="-option to autogen.sh and you can 
+       avoid sudo-location installation!
+    c) Remember to change /etc/opentee.conf file paths if you are 
+       using "--prefix="-option
+    d) Dockers "--ipc=host"-options allows to connect from outside to 
+       inside container. So you can run opentee deamon inside docker 
+       and your CA can connect it from outside docker container
+
 
 Setup
 ------
